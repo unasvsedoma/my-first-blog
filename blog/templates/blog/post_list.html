@@ -1,22 +1,17 @@
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>My first blog</title>
     </head>
-    <body>
+    <body background="http://www.intrawallpaper.com/static/images/violet-vector-leaves-circles-backgrounds-for-powerpoint_PdfkI4q.jpg">
         <div>
-            <h1><a href="">Django Girls Blog</a></h1>
+            <h1>My first blog</h1>
         </div>
-
-        <div>
-            <p>published: 25.06.2016, 14:30</p>
-            <h2><a href="">My first post</a></h2>
-            <p>This is my first post.</p>
-        </div>
-
-        <div>
-            <p>published: 25.06.2016, 1:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>This is my second post. Hahaha!</p>
-        </div>
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
     </body>
 </html>
